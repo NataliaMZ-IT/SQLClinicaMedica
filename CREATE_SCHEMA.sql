@@ -88,7 +88,7 @@ CREATE TABLE Enderecos(
 	Complemento VARCHAR(10),
 	Bairro NVARCHAR(30) NOT NULL,
 	Cidade VARCHAR(30) NOT NULL,
-	CEP NUMERIC
+	CEP NUMERIC NOT NULL,
 );
 
 CREATE TABLE Consultas (
@@ -104,7 +104,7 @@ CREATE TABLE Consultas (
 
 CREATE TABLE TiposConsulta (
 	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-	TipoConsulta VARCHAR NOT NULL UNIQUE,
+	TipoConsulta NVARCHAR(30) NOT NULL UNIQUE,
 	TempoEstimado INT NOT NULL,
 	ValorConsulta DECIMAL(8,2) NOT NULL
 );
@@ -122,7 +122,7 @@ CREATE TABLE Emails (
 
 CREATE TABLE Especialidades (
 	idEspecialidade INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-	NomeEspecialidade NVARCHAR(20) NOT NULL UNIQUE,
+	NomeEspecialidade NVARCHAR(50) NOT NULL UNIQUE,
 	Descricao NVARCHAR(255)
 );
 
