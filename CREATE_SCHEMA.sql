@@ -166,3 +166,15 @@ ALTER TABLE MedicosEspecialidade
 ADD FOREIGN KEY (idMedico) REFERENCES Medicos(idMedico),
 FOREIGN KEY (idEspecialidade) REFERENCES Especialidades(idEspecialidade);
 
+-- Altering Primary Key to Composite Primary Key
+ALTER TABLE MedicosEspecialidade
+ADD CONSTRAINT UQ_MedicosEspecialidades UNIQUE (idMedico, idEspecialidade);
+
+ALTER TABLE MedicosEspecialidade
+DROP CONSTRAINT PK__MedicosE__3213E83FB8F0A1DC;
+
+ALTER TABLE MedicosEspecialidade
+ADD CONSTRAINT PK_MedicosEspecialidades PRIMARY KEY (idMedico, idEspecialidade);
+
+ALTER TABLE MedicosEspecialidade
+DROP COLUMN id;
